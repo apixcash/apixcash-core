@@ -1,7 +1,13 @@
 Apixcash Core integration/staging tree
 =====================================
 
-https://apixcash.com
+https://apix.cash
+
+Community
+
+[Discord](#)
+[Twitter](#)
+[Telegram](#)
 
 What is Apixcash?
 ----------------
@@ -12,6 +18,32 @@ with no central authority: managing transactions and issuing money are carried
 out collectively by the network. 
 
 
+
+Build apixcashd on Ubuntu 16.04, 18.04
+----------------
+
+```
+sudo add-apt-repository universe
+sudo apt-get update
+sudo apt-get install git
+sudo apt-get install build-essential
+sudo apt-get install libtool autotools-dev autoconf
+sudo apt-get install libssl-dev
+sudo apt-get install libboost-all-dev
+sudo apt-get install pkg-config
+sudo apt-get install libevent-dev
+sudo apt-get install libzmq3-dev
+sudo add-apt-repository ppa:bitcoin/bitcoin
+sudo apt-get update
+sudo apt-get install libdb4.8-dev
+sudo apt-get install libdb4.8++-dev
+
+git clone https://github.com/apixcash/apixcash-core.git
+cd apixcash-core
+./autogen.sh
+./configure --enable-upnp-default --without-gui
+make -j 4
+```
 
 License
 -------
