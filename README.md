@@ -45,6 +45,24 @@ cd apixcash-core
 make -j 4
 ```
 
+apixcash.conf daemon configuration
+----------------
+
+```
+daemon=1
+listen=1
+server=1
+rpcport=5061
+port=6061
+rpcuser=afaocja0sd9amdaas
+rpcpassword=qd98andkcajdka
+rpcconnect=127.0.0.1
+rpcallowip=127.0.0.1
+
+# NODE CONFIGURATION
+addnode=165.22.107.222:6061
+```
+
 License
 -------
 
