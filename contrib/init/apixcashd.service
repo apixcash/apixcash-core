@@ -1,0 +1,22 @@
+[Unit]
+Description=Apixcash's distributed currency daemon
+After=network.target
+
+[Service]
+User=apixcash
+Group=apixcash
+
+Type=forking
+PIDFile=/var/lib/apixcashd/apixcashd.pid
+ExecStart=/usr/bin/apixcashd -daemon -pid=/var/lib/apixcashd/apixcashd.pid \
+-conf=/etc/apixcash/apixcash.conf -datadir=/var/lib/apixcashd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

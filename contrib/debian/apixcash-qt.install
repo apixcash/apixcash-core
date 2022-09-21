@@ -1,0 +1,6 @@
+usr/local/bin/apixcash-qt usr/bin
+share/pixmaps/apixcash32.xpm usr/share/pixmaps
+share/pixmaps/apixcash16.xpm usr/share/pixmaps
+share/pixmaps/apixcash128.png usr/share/pixmaps
+debian/apixcash-qt.desktop usr/share/applications
+debian/apixcash-qt.protocol usr/share/kde4/services/

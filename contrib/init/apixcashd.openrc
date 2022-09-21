@@ -1,0 +1,92 @@
+#!/sbin/runscript
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/apixcash/.apixcash" ]; then
+	APIXCASHD_DEFAULT_DATADIR="/var/lib/apixcash/.apixcash"
+else
+	APIXCASHD_DEFAULT_DATADIR="/var/lib/apixcashd"
+fi
+
+APIXCASHD_CONFIGFILE=${APIXCASHD_CONFIGFILE:-/etc/apixcash/apixcash.conf}
+APIXCASHD_PIDDIR=${APIXCASHD_PIDDIR:-/var/run/apixcashd}
+APIXCASHD_PIDFILE=${APIXCASHD_PIDFILE:-${APIXCASHD_PIDDIR}/apixcashd.pid}
+APIXCASHD_DATADIR=${APIXCASHD_DATADIR:-${APIXCASHD_DEFAULT_DATADIR}}
+APIXCASHD_USER=${APIXCASHD_USER:-${APIXCASH_USER:-apixcash}}
+APIXCASHD_GROUP=${APIXCASHD_GROUP:-apixcash}
+APIXCASHD_BIN=${APIXCASHD_BIN:-/usr/bin/apixcashd}
+APIXCASHD_NICE=${APIXCASHD_NICE:-${NICELEVEL:-0}}
+APIXCASHD_OPTS="${APIXCASHD_OPTS:-${APIXCASH_OPTS}}"
+
+name="Apixcash Core Daemon"
+description="Apixcash cryptocurrency P2P network daemon"
+
+command="/usr/bin/apixcashd"
+command_args="-pid=\"${APIXCASHD_PIDFILE}\" \
+		-conf=\"${APIXCASHD_CONFIGFILE}\" \
+		-datadir=\"${APIXCASHD_DATADIR}\" \
+		-daemon \
+		${APIXCASHD_OPTS}"
+
+required_files="${APIXCASHD_CONFIGFILE}"
+start_stop_daemon_args="-u ${APIXCASHD_USER} \
+			-N ${APIXCASHD_NICE} -w 2000"
+pidfile="${APIXCASHD_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${APIXCASHD_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${APIXCASHD_USER}:${APIXCASHD_GROUP}" \
+	"${APIXCASHD_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${APIXCASHD_USER}:${APIXCASHD_GROUP}" \
+	"${APIXCASHD_PIDDIR}"
+
+	checkpath -f \
+	-o ${APIXCASHD_USER}:${APIXCASHD_GROUP} \
+	-m 0660 \
+	${APIXCASHD_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${APIXCASHD_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run apixcashd."
+		eerror "The setting must appear in ${APIXCASHD_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"Apixcash Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

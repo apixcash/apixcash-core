@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Apixcash Core
+Comment=Connect to the Apixcash P2P Network
+Comment[de]=Verbinde mit dem Apixcash peer-to-peer Netzwerk
+Comment[fr]=Apixcash, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Apixcash, eşten eşe kriptografik sanal para birimi
+Exec=apixcash-qt %u
+Terminal=false
+Type=Application
+Icon=apixcash128
+MimeType=x-scheme-handler/apixcash;
+Categories=Office;Finance;

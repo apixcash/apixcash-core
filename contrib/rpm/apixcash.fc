@@ -1,0 +1,8 @@
+/usr/bin/apixcash-cli		--	gen_context(system_u:object_r:apixcash_exec_t,s0)
+/usr/sbin/apixcashd		--	gen_context(system_u:object_r:apixcash_exec_t,s0)
+/usr/lib(64)?/apixcash/apixcashd		--	gen_context(system_u:object_r:apixcash_exec_t,s0)
+
+/etc/apixcash(/.*)?		gen_context(system_u:object_r:apixcash_conf_t,s0)
+/var/lib/apixcash(/.*)?		gen_context(system_u:object_r:apixcash_var_lib_t,s0)
+
+(/var)?/run/apixcashd(/.*)?   gen_context(system_u:object_r:apixcash_var_run_t,s0)
