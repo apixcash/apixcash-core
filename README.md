@@ -5,7 +5,7 @@ https://apix.cash
 
 Community
 
-[Discord](#)
+[Discord](https://discord.gg/zaMFagHjgq)
 [Twitter](#)
 [Telegram](#)
 
