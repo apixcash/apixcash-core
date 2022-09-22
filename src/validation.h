@@ -547,7 +547,6 @@ extern CLRUCache<std::string, int8_t> *passetsRestrictionCache; // hash(address,
 
 /** Global variable that points to the global asset restriction LRU Cache (protected by cs_main) */
 extern CLRUCache<std::string, int8_t> *passetsGlobalRestrictionCache;
-
 /** Global variable that point to the active Snapshot Request database (protected by cs_main) */
 extern CSnapshotRequestDB *pSnapshotRequestDb;
 
