@@ -54,8 +54,8 @@ listen=1
 server=1
 rpcport=5061
 port=6061
-rpcuser=afaocja0sd9amdaas
-rpcpassword=qd98andkcajdka
+rpcuser=(your_rpc_username)
+rpcpassword=(your_rpc_password)
 rpcconnect=127.0.0.1
 rpcallowip=127.0.0.1
 
