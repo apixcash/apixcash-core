@@ -6,8 +6,7 @@ https://apix.cash
 Community
 
 [Discord](https://discord.gg/zaMFagHjgq)
-[Twitter](#)
-[Telegram](#)
+[Twitter](https://twitter.com/apixcash)
 
 What is Apixcash?
 ----------------
