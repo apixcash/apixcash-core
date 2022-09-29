@@ -120,7 +120,7 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 1000000;
         consensus.nBIP34Enabled = true;  
-        consensus.nBIP65Enabled = true; // 0x00000040a7de6e7eb4d8691ee635ad6acac9961869d88466a23d0236265f21fa
+        consensus.nBIP65Enabled = true;
         consensus.nBIP66Enabled = true;
         consensus.nSegwitEnabled = true;
         consensus.nCSVEnabled = true;
@@ -153,10 +153,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_ENFORCE_VALUE].nOverrideMinerConfirmationWindow = 2016;
 
         // The best chain should have at least this much work
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000e948dfb679ff"); // Block 3510
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000084412c8b2d9118"); // Block 11270
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000000000921a181b8b2e138d224b78074c630a92ad095a49f9978cbc4a8f88"); // Block 3510
+        consensus.defaultAssumeValid = uint256S("0x0000000000265239195f2d7eeb0db46a0f3acec20f7931f3153b82a0b3703187"); // Block 11270
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -197,7 +197,8 @@ public:
           checkpointData = (CCheckpointData) {
              {
                  {    0, uint256S("0x00000040a7de6e7eb4d8691ee635ad6acac9961869d88466a23d0236265f21fa")},
-				 {    3510, uint256S("0x0000000000921a181b8b2e138d224b78074c630a92ad095a49f9978cbc4a8f88")}
+				 {    3510, uint256S("0x0000000000921a181b8b2e138d224b78074c630a92ad095a49f9978cbc4a8f88")},
+				 {    11270, uint256S("0x0000000000265239195f2d7eeb0db46a0f3acec20f7931f3153b82a0b3703187")}
 
              }
           };
@@ -207,10 +208,10 @@ public:
         chainTxData = ChainTxData{
             // Update as we know more about the contents of the Apixcash chain
             // Stats as of 0x00000000000016ec03d8d93f9751323bcc42137b1b4df67e6a11c4394fd8e5ad window size 43200
-            1663950196, // * UNIX timestamp of last known number of transactions
-            4227,    // * total number of transactions between genesis and that timestamp
+            1664410138, // * UNIX timestamp of last known number of transactions
+            22968,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            0.02910142236103491       // * estimated number of transactions per second after that timestamp
+            0.03720146745600467       // * estimated number of transactions per second after that timestamp
         };
 
         /** APX Start **/
