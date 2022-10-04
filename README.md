@@ -7,6 +7,7 @@ Community
 
 [Discord](https://discord.gg/zaMFagHjgq)
 [Twitter](https://twitter.com/apixcash)
+[bitcointalk](https://bitcointalk.org/index.php?topic=5415845.0)
 
 What is Apixcash?
 ----------------
