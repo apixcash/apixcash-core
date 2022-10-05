@@ -53,8 +53,8 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 #define COLOR_LIGHT_ORANGE QColor("#f79433")
 /* Apixcash dark blue */
 #define COLOR_DARK_BLUE QColor("#475eaa")
-/* Apixcash light blue */
-#define COLOR_LIGHT_BLUE QColor("#5874cf")
+/* Apixcash color updates */
+#define COLOR_LIGHT_BLUE QColor("#06865a")
 /* Apixcash asset text */
 #define COLOR_ASSET_TEXT QColor(255, 255, 255)
 /* Apixcash shadow color - light mode */

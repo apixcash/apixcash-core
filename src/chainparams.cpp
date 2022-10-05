@@ -216,15 +216,15 @@ public:
 
         /** APX Start **/
         // Burn Amounts
-        nIssueAssetBurnAmount = 250 * COIN;
-        nReissueAssetBurnAmount = 100 * COIN;
-        nIssueSubAssetBurnAmount = 100 * COIN;
-        nIssueUniqueAssetBurnAmount = 5 * COIN;
-        nIssueMsgChannelAssetBurnAmount = 100 * COIN;
-        nIssueQualifierAssetBurnAmount = 1000 * COIN;
-        nIssueSubQualifierAssetBurnAmount = 100 * COIN;
-        nIssueRestrictedAssetBurnAmount = 1500 * COIN;
-        nAddNullQualifierTagBurnAmount = .1 * COIN;
+        nIssueAssetBurnAmount = 1 * COIN;
+        nReissueAssetBurnAmount = 0.5 * COIN;
+        nIssueSubAssetBurnAmount = 0.5 * COIN;
+        nIssueUniqueAssetBurnAmount = 0.05 * COIN;
+        nIssueMsgChannelAssetBurnAmount = 0.5 * COIN;
+        nIssueQualifierAssetBurnAmount = 5 * COIN;
+        nIssueSubQualifierAssetBurnAmount = 5 * COIN;
+        nIssueRestrictedAssetBurnAmount = 5 * COIN;
+        nAddNullQualifierTagBurnAmount = 0.05 * COIN;
 
         // Burn Addresses
         strIssueAssetBurnAddress = "ABissueAssetXXXXXXXXXXXXXXXXarpEmt";
@@ -241,15 +241,15 @@ public:
         strGlobalBurnAddress = "ABBurnXXXXXXXXXXXXXXXXXXXXXXWdW4er";
 
         // DGW Activation
-        nDGWActivationBlock = 1;
+        nDGWActivationBlock = 0;
 
         nMaxReorganizationDepth = 60; // 60 at 1 minute block timespan is +/- 60 minutes.
         nMinReorganizationPeers = 4;
         nMinReorganizationAge = 60 * 60 * 12; // 12 hours
 
-        nAssetActivationHeight = 100; // Asset activated block height
-        nMessagingActivationBlock = 100; // Messaging activated block height // TODO after messaging goes active on mainnet
-        nRestrictedActivationBlock = 100; // Restricted activated block height // TODO after restricted goes active on mainnet
+        nAssetActivationHeight = 0; // Asset activated block height
+        nMessagingActivationBlock = 0; // Messaging activated block height // TODO after messaging goes active on mainnet
+        nRestrictedActivationBlock = 0; // Restricted activated block height // TODO after restricted goes active on mainnet
         /** APX End **/
     }
 };

@@ -614,7 +614,6 @@ void ApixcashGUI::createToolBars()
         toolbarWidget->setStyleSheet(widgetStyleSheet.arg(platformStyle->LightBlueColor().name(), platformStyle->DarkBlueColor().name()));
 
         QLabel* label = new QLabel();
-        //label->setPixmap(QPixmap::fromImage(QImage(":/icons/apixcashtext")));
         label->setContentsMargins(0,0,0,50);
         label->setStyleSheet(".QLabel{background-color: transparent;}");
         /** APX END */
@@ -629,12 +628,6 @@ void ApixcashGUI::createToolBars()
         toolbar->addAction(sendCoinsAction);
         toolbar->addAction(receiveCoinsAction);
         toolbar->addAction(historyAction);
-        //toolbar->addAction(createAssetAction);
-        //toolbar->addAction(transferAssetAction);
-        //toolbar->addAction(manageAssetAction);
-		//toolbar->addAction(messagingAction);
-		//toolbar->addAction(votingAction);
-        //toolbar->addAction(restrictedAssetAction);
 
         QString openSansFontString = "font: normal 22pt \"Open Sans\";";
         QString normalString = "font: normal 22pt \"Arial\";";
@@ -791,7 +784,7 @@ void ApixcashGUI::createToolBars()
                                     labelCurrentPrice->setStyleSheet(currentPriceStyleSheet.arg(COLOR_LABELS.name()));
                             }
                             labelCurrentPrice->setText(QString("%1").arg(QString().setNum(next, 'f', 8)));
-                            labelCurrentPrice->setToolTip(tr("Brought to you by binance.com"));
+                            labelCurrentPrice->setToolTip(tr("Brought to you by exchange.apix.cash"));
                         }
                     }
                 }
@@ -1697,6 +1690,6 @@ void UnitDisplayStatusBarControl::onMenuSelection(QAction* action)
 
 void ApixcashGUI::getPriceInfo()
 {
-    request->setUrl(QUrl("https://api.binance.com/api/v1/ticker/price?symbol=APXBTC"));
+    request->setUrl(QUrl("https://kubiga.art/price.php"));
     networkManager->get(*request);
 }
