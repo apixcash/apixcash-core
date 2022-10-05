@@ -3,7 +3,7 @@ We give our utmost thanks to the donors. This donation will be used for our futu
 
 ## Fund Address
 - APX
-  * [AJd9Gup8ZwjKye26VQH17RDhKa8WUugYTJ](https://explorer.apix.cash/address/AJd9Gup8ZwjKye26VQH17RDhKa8WUugYTJ)    
+  * [Aem43wPdgWJ7GSQYiV1Nr4kNVo4Co58Zgv](https://explorer.apix.cash/address/Aem43wPdgWJ7GSQYiV1Nr4kNVo4Co58Zgv)    
 - BTC
   * [bc1qge932xyavhatl4hr9r32086e0z4gz60f4tg93p](https://blockstream.info/address/bc1qge932xyavhatl4hr9r32086e0z4gz60f4tg93p)
 - BCH
